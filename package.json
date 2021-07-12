@@ -4,7 +4,9 @@
   "description": "Core game library containing all the game logic",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "@klifu:registry": "https://npm.pkg.github.com/"
   },
@@ -25,5 +27,8 @@
   "homepage": "https://github.com/Klifu/core#readme",
   "devDependencies": {
     "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
   }
 }
