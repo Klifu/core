@@ -1,7 +1,8 @@
-name: Node.js Package
+name: GPR Release
 
 on:
-  push
+  release:
+    types: [created]
 
 jobs:
   publish-gpr:

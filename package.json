@@ -2,12 +2,15 @@
   "name": "@klifu/core",
   "version": "1.0.0",
   "description": "Core game library containing all the game logic",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
   "publishConfig": {
     "@klifu:registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -15,9 +18,12 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Klifu/core/issues"
   },
-  "homepage": "https://github.com/Klifu/core#readme"
+  "homepage": "https://github.com/Klifu/core#readme",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
 }

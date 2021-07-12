@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"outDir": "dist",
+		"esModuleInterop": true,
+		"declaration": true,
+		"strict": true
+	},
+	"include": [
+		"lib"
+	],
+	"exclude": [
+		"node_modules",
+		"dist"
+	],
+}
