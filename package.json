@@ -1,10 +1,10 @@
 {
-  "name": "core",
+  "name": "@klifu/core",
   "version": "1.0.0",
   "description": "Core game library containing all the game logic",
   "main": "index.js",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@klifu"
+    "@klifu:registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
