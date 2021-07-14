@@ -1,3 +1,7 @@
-export const API_URL = {
-	pokemons: 'https://klifu-pokemons.deta.dev/'
+export const API_URL = () => {
+	const URL = 'https://klifu.deta.dev/';
+
+	return {
+		pokemons: () => URL + 'pokemons'
+	}
 }

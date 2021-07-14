@@ -11,7 +11,8 @@
     "@klifu:registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
+    "pretest": "npm run build",
+    "test": "jest --coverage && codecov",
     "build": "tsc"
   },
   "repository": {
@@ -26,9 +27,31 @@
   },
   "homepage": "https://github.com/Klifu/core#readme",
   "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "codecov": "^3.8.2",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.3",
     "typescript": "^4.3.5"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.0",
     "axios": "^0.21.1"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/setupTests.ts"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.(tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json",
+      "node"
+    ],
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   }
 }
