@@ -1,8 +1,8 @@
-documentation
+documentation:
 - README.md
 
-test
+test:
 - lib/**/*.spec.ts
 
-lib
+lib:
 - lib/**/*.ts
