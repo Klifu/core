@@ -7,5 +7,5 @@ test:
 lib:
 - lib/**/*.ts
 
-@github:
+action:
   - .github/*
