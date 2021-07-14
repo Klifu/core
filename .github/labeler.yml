@@ -6,3 +6,6 @@ test:
 
 lib:
 - lib/**/*.ts
+
+@github:
+  - .github/*
