@@ -1,4 +1,3 @@
-// This file will contain all the logic to fetch data from the API
 import { API_URL } from './constants';
 import Axios from 'axios';
 
