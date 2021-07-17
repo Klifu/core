@@ -1,6 +1,12 @@
 # core
 Core game library containing all the game logic
 
+[![codecov](https://codecov.io/gh/klifu/core/branch/main/graph/badge.svg?token=FYklvhHRMn)](https://codecov.io/gh/klifu/core)
+[![Node.js CI](https://github.com/Klifu/core/actions/workflows/node.js.yml/badge.svg)](https://github.com/Klifu/core/actions/workflows/node.js.yml)
+[![GitHub license](https://img.shields.io/github/license/Klifu/core)](https://github.com/Klifu/core/blob/main/LICENSE)
+![GitHub all releases](https://img.shields.io/github/downloads/klifu/core/total)
+
+
 
 ## Installation 
 To run this library ensure that you have Node.js >= v10 [Install Node.js via package manager](https://nodejs.org/en/download/package-manager/)
