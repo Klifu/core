@@ -1,16 +1,40 @@
+export type PokemonType = 'Normal'
+	| 'Fire'
+	| 'Water'
+	| 'Grass'
+	| 'Electric'
+	| 'Ice'
+	| 'Fighting'
+	| 'Poision'
+	| 'Ground'
+	| 'Flying'
+	| 'Psychic'
+	| 'Bug'
+	| 'Rock'
+	| 'Ghost'
+	| 'Dark'
+	| 'Dragon'
+	| 'Steel'
+	| 'Fairy'
+
 export interface PokemonBase {
 	id: number,
 	name: string,
-	type: string[],
+	type: PokemonType[],
 	sprite: string
 }
 
-export interface Pokemon extends PokemonBase {
-	hp: number,
+export interface IV {
 	attack: number,
 	defense: number,
-	'special-attack': number,
-	'special-defense': number,
-	speed: number,
-	level?: number
+	hp: number
+}
+
+export interface Pokemon extends PokemonBase {
+	attack: number,
+	defense: number,
+	hp: number,
+	iv: IV,
+	cp: number,
+	level: number
 }
