@@ -22,8 +22,11 @@ export class PokemonService {
 
 export class Pokemons {
 	static async list() {
-		const { data, error } = await fetchPokemons();
-		if (error) throw error;
-		return generateRedux(pokemonListSlice(data));
+		try {
+			let pokemonService: PokemonService = await PokemonService.fetch();
+			return pokemonService.list();
+		} catch (error) {
+			throw error;
+		}
 	}
 }
