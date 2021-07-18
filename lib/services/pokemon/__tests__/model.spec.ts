@@ -1,9 +1,18 @@
-import { Pokemons } from '../model';
+import { Pokemons, PokemonService } from '../model';
 import { Slice, Store } from '@reduxjs/toolkit';
 import { PokemonBase } from '../types';
 
 let pokemonListSlice: Slice;
 let pokemonStore: Store
+
+describe('Pokemon Service ', () => {
+	it('should return Pokemon service object', async () => {
+		const pokemonService = await PokemonService.fetch();
+		expect(pokemonService instanceof PokemonService);
+		expect(pokemonService.list()).toBeDefined();
+	}, 10000)
+})
+
 
 describe('Pokemons class should ', () => {
 	beforeAll(async () => {
