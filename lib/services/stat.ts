@@ -1,4 +1,4 @@
-import { IV, CPM_TABLE } from './types';
+import { IV, CPM_TABLE } from './pokemon/types';
 
 export const cpm = (level: any): number => {
 	//@ts-ignore
