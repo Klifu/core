@@ -1,6 +1,6 @@
-import { Pokemons } from './model';
+import { Pokemons } from '../model';
 import { Slice, Store } from '@reduxjs/toolkit';
-import { PokemonBase } from './types';
+import { PokemonBase } from '../types';
 
 let pokemonListSlice: Slice;
 let pokemonStore: Store

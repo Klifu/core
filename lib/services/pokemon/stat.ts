@@ -1,4 +1,9 @@
-import { IV } from './types';
+import { IV, CPM_TABLE } from './types';
+
+export const cpm = (level: any): number => {
+	//@ts-ignore
+	return CPM_TABLE[level];
+}
 
 export interface StatInput {
 	attack: number,
@@ -8,17 +13,17 @@ export interface StatInput {
 	iv: IV
 }
 
-const Strat = (stats: StatInput) => {
-	let Attack: number = (stats.attack + stats.iv.attack)
-	let Defense: number = (stats.defense + stats.iv.defense)
-	let HP: number = (stats.hp + stats.iv.hp)
+export const Strat = (stats: StatInput) => {
+	let Attack: number = (stats.attack + stats.iv.attack) * cpm(stats.level);
+	let Defense: number = (stats.defense + stats.iv.defense) * cpm(stats.level);
+	let HP: number = (stats.hp + stats.iv.hp) * cpm(stats.level);
 
-	let CP: number = (Attack * Defense^0.5 * HP^0.5 )/10
+	let CP: number = (Attack * Defense ^ 0.5 * HP ^ 0.5 * cpm(stats.level) ^ 2) / 10
 
 	return {
-		Attack,
-		Defense,
-		HP,
-		CP
+		Attack: Math.round(Attack),
+		Defense: Math.round(Defense),
+		HP: Math.round(HP),
+		CP: Math.round(CP)
 	}
 }
