@@ -13,6 +13,10 @@ export class PokemonService {
 		return generateRedux(pokemonListSlice(this._pokemons));
 	}
 
+	catch(level: number) {
+		
+	}
+
 	static async load() {
 		const { data, error } = await fetchPokemons();
 		if (error) throw error;
