@@ -35,7 +35,8 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.0",
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "random": "^3.0.6"
   },
   "jest": {
     "setupFilesAfterEnv": [
