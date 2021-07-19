@@ -2,11 +2,10 @@
 <img src="./klifu.gif" alt="logo" width="200" />
 </p>
 
+
 <h1 align="center">
 core
 </h1>
-
-
 
 Core game library containing all the game logic
 
