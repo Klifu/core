@@ -1,17 +1,16 @@
-import { Stat } from '../../types';
+import { BaseStat, IV, Stat } from '../../types';
 import { StatService } from '../stat';
 
 
 describe('StratService should', () => {
 	it("return stats", () => {
-		const baseStat: Stat = {
+		const baseStat: BaseStat = {
 			attack: 120,
 			defense: 144,
 			hp: 124,
-			iv: { attack: 8, hp: 8, defense: 10 },
-			level: 4
 		}
-		let statService = new StatService(baseStat);
-		expect(statService.getCurrentStrat()).toBeTruthy();
+		const iv: IV = { attack: 9, hp: 10, defense: 12 };
+		let statService = new StatService(baseStat, iv, 4);
+		expect(statService instanceof StatService).toBeTruthy();
 	})
 })
