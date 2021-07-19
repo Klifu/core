@@ -28,6 +28,7 @@
   "homepage": "https://github.com/Klifu/core#readme",
   "devDependencies": {
     "@types/jest": "^26.0.24",
+    "@types/lodash": "^4.14.171",
     "codecov": "^3.8.2",
     "jest": "^27.0.6",
     "ts-jest": "^27.0.3",
@@ -36,6 +37,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.0",
     "axios": "^0.21.1",
+    "lodash": "^4.17.21",
     "random": "^3.0.6"
   },
   "jest": {

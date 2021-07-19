@@ -1,7 +1,8 @@
 import { fetchPokemons } from '../fetcher';
-import { PokemonBase, ReduxResponseObject } from '../types';
+import { PokemonBase, Rarity, ReduxResponseObject } from '../types';
 import { generateRedux } from '../utils';
 import { pokemonListSlice } from '../slices';
+import _ from 'lodash';
 
 export class PokemonService {
 	private readonly _pokemons: PokemonBase[];
@@ -14,7 +15,11 @@ export class PokemonService {
 	}
 
 	catch(level: number) {
-		
+
+	}
+
+	ofRarity(rarity: Rarity): PokemonBase[] {
+		return _.filter(this._pokemons, pokemon => pokemon.rarity === rarity);
 	}
 
 	static async load() {
