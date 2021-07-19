@@ -32,13 +32,17 @@ export interface IV {
 	hp: number
 }
 
-export interface Pokemon extends PokemonBase {
+export interface Stat {
 	attack: number,
 	defense: number,
 	hp: number,
 	iv: IV,
-	cp: number,
-	level: number
+	level: number,
+}
+
+export interface Pokemon extends PokemonBase {
+	stat: Stat,
+	cp: number
 }
 
 export const CPM_TABLE = {
@@ -67,4 +71,12 @@ export const CPM_TABLE = {
 export interface ReduxResponseObject {
 	store: Store,
 	slice: Slice
+}
+
+export interface StatInput {
+	attack: number,
+	defense: number,
+	hp: number,
+	level: number,
+	iv: IV
 }
