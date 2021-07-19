@@ -1,3 +1,5 @@
+import { Slice, Store } from "@reduxjs/toolkit"
+
 export type PokemonType = 'Normal'
 	| 'Fire'
 	| 'Water'
@@ -30,13 +32,17 @@ export interface IV {
 	hp: number
 }
 
-export interface Pokemon extends PokemonBase {
+export interface Stat {
 	attack: number,
 	defense: number,
 	hp: number,
 	iv: IV,
-	cp: number,
-	level: number
+	level: number,
+}
+
+export interface Pokemon extends PokemonBase {
+	stat: Stat,
+	cp: number
 }
 
 export const CPM_TABLE = {
@@ -59,4 +65,18 @@ export const CPM_TABLE = {
 	9: 0.39956728,
 	9.5: 0.4111935514,
 	10: 0.4225
+}
+
+
+export interface ReduxResponseObject {
+	store: Store,
+	slice: Slice
+}
+
+export interface StatInput {
+	attack: number,
+	defense: number,
+	hp: number,
+	level: number,
+	iv: IV
 }
