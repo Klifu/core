@@ -1,3 +1,7 @@
+<p align="center">
+<img src="./klifu.gif" alt="logo" width="200" />
+</p>
+
 # core
 Core game library containing all the game logic
 
