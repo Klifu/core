@@ -23,10 +23,20 @@ export interface PokemonBase {
 	id: number,
 	name: string,
 	type: PokemonType[],
-	sprite: string
+	sprite: string,
+	baseStat?: BaseStat,
+	rarity?: Rarity
 }
 
+export type Rarity = 'C' | 'R' | 'SR' | 'UR' | 'L'
+
 export interface IV {
+	attack: number,
+	defense: number,
+	hp: number
+}
+
+export interface BaseStat {
 	attack: number,
 	defense: number,
 	hp: number
