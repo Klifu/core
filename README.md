@@ -2,7 +2,11 @@
 <img src="./klifu.gif" alt="logo" width="200" />
 </p>
 
-# core
+
+<h1 align="center">
+core
+</h1>
+
 Core game library containing all the game logic
 
 [![codecov](https://codecov.io/gh/klifu/core/branch/main/graph/badge.svg?token=FYklvhHRMn)](https://codecov.io/gh/klifu/core)
