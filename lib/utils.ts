@@ -8,7 +8,7 @@ export const generateRedux = (slice: Slice): ReduxResponseObject => {
 	return { store, slice };
 }
 
-export const cpmTable = (level: number): number => {
+export const cpmTable = (level?: number): number => {
 	switch(level) {
 		case 1: 
 			return 0.094;

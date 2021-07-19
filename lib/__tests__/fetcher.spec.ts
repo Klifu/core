@@ -1,4 +1,4 @@
-import { fetchPokemons } from './fetcher';
+import { fetchPokemons } from '../fetcher';
 
 describe('fetchPokemons should ', () => {
 	it('fetch all pokemons from API', async () => {
