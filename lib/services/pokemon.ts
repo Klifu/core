@@ -1,21 +1,25 @@
 import { fetchPokemons } from '../fetcher';
-import { PokemonBase, Rarity, ReduxResponseObject } from '../types';
-import { generateRedux } from '../utils';
-import { pokemonListSlice } from '../slices';
+import { PokemonBase, PokemonType, Rarity } from '../types';
 import _ from 'lodash';
 
 export class PokemonService {
 	private readonly _pokemons: PokemonBase[];
+
 	constructor(pokemons: PokemonBase[]) {
 		this._pokemons = pokemons;
 	}
 
-	list(): ReduxResponseObject {
-		return generateRedux(pokemonListSlice(this._pokemons));
+	get pokemons() {
+		return this._pokemons;
 	}
 
-	catch(level: number) {
-
+	where() {
+		return {
+			name: (name: string) => _.find(this._pokemons, pokemon => pokemon.name === name),
+			id: (id: number) => _.find(this._pokemons, pokemon => pokemon.id === id),
+			rarity: (rarity: Rarity) => _.filter(this.pokemons, pokemon => pokemon.rarity === rarity),
+			type: (type: PokemonType) => _.filter(this._pokemons, pokemon => pokemon.type.includes(type))
+		}
 	}
 
 	ofRarity(rarity: Rarity): PokemonBase[] {
