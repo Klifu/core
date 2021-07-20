@@ -15,7 +15,7 @@ export class RandomeGenerator {
 	generatePokemon(pokemonService: PokemonService, userLevel: number): Pokemon {
 		const rarityIdentifier = random.int(1, 100);
 		const rarity = this._rarityTable(rarityIdentifier);
-		const rarePokemons = pokemonService.ofRarity(rarity);
+		const rarePokemons = pokemonService.where().rarity(rarity);
 		const pokemon = rarePokemons[random.int(0, rarePokemons.length)];
 		const generatedIV = this.IV();
 		const generatedLevel = random.int(1, userLevel + 2);

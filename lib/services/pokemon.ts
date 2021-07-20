@@ -22,10 +22,6 @@ export class PokemonService {
 		}
 	}
 
-	ofRarity(rarity: Rarity): PokemonBase[] {
-		return _.filter(this._pokemons, pokemon => pokemon.rarity === rarity);
-	}
-
 	static async load() {
 		const { data, error } = await fetchPokemons();
 		if (error) throw error;
