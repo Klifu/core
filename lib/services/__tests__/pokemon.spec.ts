@@ -1,4 +1,3 @@
-import { ReduxResponseObject } from '../../types';
 import { PokemonService } from '../pokemon';
 
 let pokemonService: PokemonService;
@@ -13,7 +12,28 @@ describe('Pokemon Service', () => {
 	})
 
 	it('should return reduxResponseObject', () => {
-		const response: ReduxResponseObject = pokemonService.list();
+		const response = pokemonService.pokemons;
 		expect(response).toBeDefined();
 	})
+
+	it('should search according to name', () => {
+		const bulbasaur = pokemonService.where().name("Bulbasaur");
+		expect(bulbasaur?.name).toMatch("Bulbasaur");
+	})
+
+	it("should search according to id", () => {
+		const bulbasaur = pokemonService.where().id(1);
+		expect(bulbasaur?.name).toMatch("Bulbasaur");
+	})
+
+	it("should filter according to rarity", () => {
+		const rarePokemons = pokemonService.where().rarity('R');
+		expect(rarePokemons).toBeTruthy();
+	})
+
+	it("should fillter according to type", () => {
+		const grassPokemons = pokemonService.where().type('Grass');
+		expect(grassPokemons).toBeTruthy();
+	})
+
 })

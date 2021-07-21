@@ -24,8 +24,8 @@ export interface PokemonBase {
 	name: string,
 	type: PokemonType[],
 	sprite: string,
-	baseStat?: BaseStat,
-	rarity?: Rarity
+	baseStat: BaseStat,
+	rarity: Rarity
 }
 
 export type Rarity = 'C' | 'R' | 'SR' | 'UR' | 'L'

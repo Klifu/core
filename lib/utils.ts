@@ -1,13 +1,3 @@
-import { configureStore, Slice } from '@reduxjs/toolkit';
-import { ReduxResponseObject } from './types';
-
-
-export const generateRedux = (slice: Slice): ReduxResponseObject => {
-	let store = configureStore({ reducer: slice.reducer });
-
-	return { store, slice };
-}
-
 export const cpmTable = (level?: number): number => {
 	switch(level) {
 		case 1: 
