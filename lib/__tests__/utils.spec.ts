@@ -1,10 +1,4 @@
-import {generateRedux, cpmTable} from '../utils';
-
-describe('generateRedux ' , () => {
-	it('should be defined', () => {
-		expect(generateRedux).toBeDefined();
-	})
-})
+import { cpmTable} from '../utils';
 
 describe('cpmTable', () => {
 	it('Should return cpm according to the level', () => {
