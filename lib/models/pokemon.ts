@@ -3,7 +3,7 @@ export interface PokemonBase {
 	id: number,
 	name: string,
 	sprite: string,
-	type: PokemonType,
+	type: PokemonType[],
 	baseStat: BaseStat,
 	rarity: Rarity
 }
@@ -81,7 +81,7 @@ export class Pokemon extends Base {
 		return this._json.sprite;
 	}
 
-	type(): PokemonType {
+	type(): PokemonType[] {
 		return this._json.type;
 	}
 
