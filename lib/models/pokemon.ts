@@ -78,7 +78,7 @@ export class Pokemon extends Base {
 	}
 
 	sprite(): string {
-		return this._json.name;
+		return this._json.sprite;
 	}
 
 	type(): PokemonType {
@@ -91,6 +91,10 @@ export class Pokemon extends Base {
 
 	rarity(): Rarity {
 		return this._json.rarity;
+	}
+
+	level(): number {
+		return this._level;
 	}
 
 	stat(): Stat {
