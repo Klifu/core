@@ -1,14 +1,11 @@
-
+import { CPMService } from '../services/cpm';
 export interface PokemonBase {
 	id: number,
 	name: string,
 	sprite: string,
 	type: PokemonType,
 	baseStat: BaseStat,
-	rarity: Rarity,
-	level?: number
-	stat?: Stat,
-	iv?: IV
+	rarity: Rarity
 }
 
 export type PokemonType = 'Normal'
@@ -59,6 +56,19 @@ export class Base {
 }
 
 export class Pokemon extends Base {
+
+	private _stat: Stat;
+	private _level: number;
+	private _iv: IV;
+	private cpmService: CPMService;
+
+	constructor(json: PokemonBase, level: number, iv: IV) {
+		super(json);
+		this._level = level;
+		this._iv = iv;
+		this.cpmService = new CPMService();
+		this._stat = this.calculateStat(this._level, this._iv);
+	}
 	id(): number {
 		return this._json.id;
 	}
@@ -83,12 +93,17 @@ export class Pokemon extends Base {
 		return this._json.rarity;
 	}
 
-	stat(): Stat | undefined {
-		return this._json.stat;
+	stat(): Stat {
+		return this._stat;
 	}
 
-	level(): number | undefined {
-		return this._json.level;
+	private calculateStat(level: number, iv: IV): Stat {
+		let baseStat = this._json.baseStat;
+		const attack = Math.round((baseStat.attack + iv.attack) * this.cpmService.getCpm(level));
+		const defense = Math.round((baseStat.defense + iv.defense) * this.cpmService.getCpm(level));
+		const hp = Math.round((baseStat.hp + iv.hp) * this.cpmService.getCpm(level));
+		const cp = Math.round((attack * defense ^ 0.5 * hp ^ 0.5 * this.cpmService.getCpm(level) ^ 2) / 10);
+		return { attack, defense, hp, cp };
 	}
 
 }
