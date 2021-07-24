@@ -1,24 +1,25 @@
-import { IV, Pokemon } from '../../types';
-import { PokemonService } from '../pokemon';
 import { RandomeGenerator } from '../rng';
+import { IV, Rarity } from '../../models';
 
-const generator = new RandomeGenerator();
-let pokemonService: PokemonService
+let randomGenerator: RandomeGenerator;
 
-describe('RandomGenerator.IV should', () => {
-	it('return random IV', () => {
-		let iv: IV = generator.IV();
-		expect(iv).toBeDefined();
+describe('RandomGenerator', () => {
+	beforeAll(() => {
+		randomGenerator = new RandomeGenerator();
+	});
+
+	it('should generate random IV', () => {
+		const iv: IV = randomGenerator.IV();
+		expect(iv.attack).toBeLessThanOrEqual(16);
 	})
-})
 
-describe('RandomGenerator should', () => {
-	beforeAll(async () => {
-		pokemonService = await PokemonService.load();
-	}, 10000)
+	it('Should return random rarity', () => {
+		const rarity: Rarity = randomGenerator.rarity();
+		expect(rarity).toBeTruthy();
+	})
 
-	it("generate random pokemon ", () => {
-		const pokemon: Pokemon = generator.generatePokemon(pokemonService, 5);
-		expect(pokemon).toBeDefined();
+	it('should return random level', () => {
+		const level: number = randomGenerator.level(4);
+		expect(level).toBeLessThanOrEqual(6);
 	})
 })
