@@ -1,3 +1,4 @@
+import { Pokemon } from '../../models';
 import { PokemonService } from '../pokemon';
 
 let pokemonService: PokemonService;
@@ -34,6 +35,11 @@ describe('Pokemon Service', () => {
 	it("should fillter according to type", () => {
 		const grassPokemons = pokemonService.where().type('Grass');
 		expect(grassPokemons).toBeTruthy();
+	})
+
+	it('Should generate random pokemon entity to catch', () => {
+		const pokemon = pokemonService.catch(4);
+		expect(pokemon instanceof Pokemon).toBeTruthy();
 	})
 
 })

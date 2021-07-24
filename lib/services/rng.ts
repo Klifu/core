@@ -1,7 +1,5 @@
 import random from 'random';
-import { IV, Pokemon, Rarity } from '../types';
-import { PokemonService } from './pokemon';
-import { StatService } from './stat';
+import { IV, Rarity } from '../models';
 
 export class RandomeGenerator {
 	IV(): IV {
@@ -12,33 +10,16 @@ export class RandomeGenerator {
 		} as IV
 	}
 
-	generatePokemon(pokemonService: PokemonService, userLevel: number): Pokemon {
-		const rarityIdentifier = random.int(1, 100);
-		const rarity = this._rarityTable(rarityIdentifier);
-		const rarePokemons = pokemonService.where().rarity(rarity);
-		const pokemon = rarePokemons[random.int(0, rarePokemons.length)];
-		const generatedIV = this.IV();
-		const generatedLevel = random.int(1, userLevel + 2);
-		const statService = new StatService(pokemon.baseStat, generatedIV, generatedLevel);
+	rarity(): Rarity {
+		return this._rarityTable(random.int(1, 100));
+	}
 
-		let generatedPokemon: Pokemon = {
-			id: pokemon.id,
-			name: pokemon.name,
-			type: pokemon.type,
-			rarity: pokemon.rarity,
-			sprite: pokemon.sprite,
-			baseStat: pokemon.baseStat,
-			stat: {
-				attack: statService.getAttack(),
-				defense: statService.getDefense(),
-				hp: statService.getHP(),
-				iv: generatedIV,
-				level: generatedLevel
-			},
-			cp: statService.getCP()
-		}
+	pokemonindex(length: number): number {
+		return random.int(0, length);
+	}
 
-		return generatedPokemon;
+	level(userLevel: number) {
+		return random.int(1, userLevel + 2);
 	}
 
 	private _rarityTable(identifier: number): Rarity {
