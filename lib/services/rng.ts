@@ -1,7 +1,5 @@
 import random from 'random';
-import { IV, Pokemon, Rarity } from '../models';
-import { PokemonService } from './pokemon';
-import { StatService } from './stat';
+import { IV, Rarity } from '../models';
 
 export class RandomeGenerator {
 	IV(): IV {
