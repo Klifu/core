@@ -1,6 +1,6 @@
 {
   "name": "@klifu/core",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Core game library containing all the game logic",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
