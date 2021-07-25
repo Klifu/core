@@ -7,9 +7,6 @@
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "@klifu:registry": "https://npm.pkg.github.com/"
-  },
   "scripts": {
     "pretest": "npm run build",
     "test": "jest --coverage && codecov",
