@@ -1,11 +1,6 @@
-<p align="center">
-<img src="./klifu.gif" alt="logo" width="200" />
-</p>
+<img src="https://github.com/Klifu/klifu/blob/main/assets/banner-dark.png" alt="banner" />
 
-
-<h1 align="center">
-core
-</h1>
+# Core
 
 Core game library containing all the game logic
 
