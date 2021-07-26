@@ -1,14 +1,13 @@
 <img src="https://github.com/Klifu/klifu/blob/main/assets/banner-dark.png" alt="banner" />
 
-# Core
-
-Core game library containing all the game logic
-
 [![codecov](https://codecov.io/gh/klifu/core/branch/main/graph/badge.svg?token=FYklvhHRMn)](https://codecov.io/gh/klifu/core)
 [![Node.js CI](https://github.com/Klifu/core/actions/workflows/node.js.yml/badge.svg)](https://github.com/Klifu/core/actions/workflows/node.js.yml)
 [![GitHub license](https://img.shields.io/github/license/Klifu/core)](https://github.com/Klifu/core/blob/main/LICENSE)
 ![GitHub all releases](https://img.shields.io/github/downloads/klifu/core/total)
 
+
+# @klifu/core
+Core game library containing all the game logic
 
 
 ## Installation 
