@@ -106,7 +106,10 @@ export class Pokemon extends Base {
 		const attack = Math.round((baseStat.attack + iv.attack) * this.cpmService.getCpm(level));
 		const defense = Math.round((baseStat.defense + iv.defense) * this.cpmService.getCpm(level));
 		const hp = Math.round((baseStat.hp + iv.hp) * this.cpmService.getCpm(level));
-		const cp = Math.round((attack * defense ^ 0.5 * hp ^ 0.5 * this.cpmService.getCpm(level) ^ 2) / 10);
+		let cp = Math.round((attack * defense ^ 0.5 * hp ^ 0.5 * this.cpmService.getCpm(level) ^ 2) / 10);
+		if(cp<10){
+			cp = 10;
+		}
 		return { attack, defense, hp, cp };
 	}
 

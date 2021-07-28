@@ -36,5 +36,7 @@ describe('pokemon ', () => {
 		expect(stat.defense).toBeTruthy();
 		expect(stat.hp).toBeTruthy();
 		expect(stat.cp).toBeTruthy();
+		//CP should not be less than 10
+		expect(stat.cp).toBeGreaterThanOrEqual(10);
 	})
 })
