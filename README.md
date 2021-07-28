@@ -1,4 +1,9 @@
-<img src="https://github.com/Klifu/klifu/blob/main/assets/banner-dark.png" alt="banner" />
+<p align="center">
+<img src="https://github.com/Klifu/klifu/blob/main/assets/banner-dark.png" alt="banner" width="500" />
+<br>
+<h1 align="center">Core</h1>
+
+</p>
 
 [![codecov](https://codecov.io/gh/klifu/core/branch/main/graph/badge.svg?token=FYklvhHRMn)](https://codecov.io/gh/klifu/core)
 [![Node.js CI](https://github.com/Klifu/core/actions/workflows/node.js.yml/badge.svg)](https://github.com/Klifu/core/actions/workflows/node.js.yml)
