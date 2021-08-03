@@ -1,0 +1,66 @@
+name: Release 
+
+on:
+  push:
+    branches:
+      - master
+      # below lines are not enough to have release supported for these branches
+      # make sure configuration of `semantic-release` package mentiones these branches
+      - next
+      - '**-release'
+
+
+jobs:
+
+  test:
+    name: Test on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Check if Node.js project and has package.json
+        id: packagejson
+        run: test -e ./package.json && echo "::set-output name=exists::true" || echo "::set-output name=exists::false"
+        shell: bash
+      - if: steps.packagejson.outputs.exists == 'true'
+        name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - if: steps.packagejson.outputs.exists == 'true'
+        name: Install dependencies
+        run: npm install
+      - if: steps.packagejson.outputs.exists == 'true'
+        name: Run test
+        run: npm test
+
+  release:
+    needs: test
+    name: Publish to NPM and GitHub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Check if Node.js project and has package.json
+        id: packagejson
+        run: test -e ./package.json && echo "::set-output name=exists::true" || echo "::set-output name=exists::false"
+      - if: steps.packagejson.outputs.exists == 'true'
+        name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - if: steps.packagejson.outputs.exists == 'true'
+        name: Install dependencies
+        run: npm install
+      - if: steps.packagejson.outputs.exists == 'true'
+        name: Release to NPM and GitHub
+        id: release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.npm_token }}
+          GIT_AUTHOR_NAME: klifu-bot
+          GIT_COMMITTER_NAME: klifu-bot
+        run: npm run release
