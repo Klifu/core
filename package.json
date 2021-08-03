@@ -10,7 +10,11 @@
   "scripts": {
     "pretest": "npm run build",
     "test": "jest --coverage && codecov",
-    "build": "tsc"
+    "build": "tsc",
+    "release": "semantic-release",
+    "generate:assets": "echo 'Nothing Generated'",
+    "bump:version": "npm --no-git-tag-version --allow-same-version version $VERSION",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
