@@ -1,4 +1,4 @@
-import { cpmTable} from '../utils';
+import { cpmTable} from '../util/utils';
 
 describe('cpmTable', () => {
 	it('Should return cpm according to the level', () => {

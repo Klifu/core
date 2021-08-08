@@ -1,5 +1,5 @@
 import {PokemonBase} from './models';
-import {fetchPokemons} from './fetcher';
+import {fetchPokemons} from './util/fetcher';
 import {Pokedex} from './pokedex';
 
 interface Config {

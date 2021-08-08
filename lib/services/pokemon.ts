@@ -1,4 +1,4 @@
-import { fetchPokemons } from '../fetcher';
+import { fetchPokemons } from '../util/fetcher';
 import { PokemonBase, PokemonType, Rarity, Pokemon } from '../models';
 import _ from 'lodash';
 import { RandomeGenerator } from './rng';
