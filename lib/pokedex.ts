@@ -1,4 +1,4 @@
-import { PokemonBase } from "../models";
+import { PokemonBase } from "./models";
 
 export class Pokedex {
 	private _pokemons: PokemonBase[];

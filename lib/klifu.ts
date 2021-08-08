@@ -1,12 +1,12 @@
-import { fetchPokemons } from "../fetcher";
-import { PokemonBase } from "../models";
-import { Pokedex } from './pokedex';
+import {PokemonBase} from './models';
+import {fetchPokemons} from './fetcher';
+import {Pokedex} from './pokedex';
 
 interface Config {
 	pokemonList: PokemonBase[]
 }
 
-class Klifu {
+export class Klifu {
 	private _pokemonList: PokemonBase[]
 
 	constructor(pokemonList: PokemonBase[]) {
