@@ -13,7 +13,7 @@ export class Klifu {
 		this._pokemonList = pokemonList;
 	}
 
-	pokedex() {
+	pokedex(): Pokedex {
 		return new Pokedex(this._pokemonList);
 	}
 
