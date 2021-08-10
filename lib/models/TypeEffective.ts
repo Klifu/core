@@ -110,7 +110,7 @@ class TypeEffectiveTable {
 }
 
 export class TypeEffective extends TypeEffectiveTable {
-	look(AttackType: PokemonType, DeffendType: PokemonType) {
+	multiplier(AttackType: PokemonType, DeffendType: PokemonType) {
 		return this._table[AttackType][DeffendType];
 	}
 }
