@@ -18,7 +18,8 @@ export class Klifu {
 	}
 
 	static async load(config?: Config) {
-		if (config?.pokemonList) {
+		if (config) {
+			if(!config.pokemonList) throw new Error('Custom Pokemon List Missing');
 			return new Klifu(config.pokemonList);
 		}
 
