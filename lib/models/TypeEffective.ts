@@ -11,7 +11,7 @@ export type TypeEffectiveness = {
 	}
 };
 
-class TypeEffectiveTable {
+export class TypeEffectiveTable {
 	readonly _table: TypeEffectiveness;
 	constructor() {
 		this._table = {
