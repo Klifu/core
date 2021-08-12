@@ -5,7 +5,8 @@ export * from './pokedex';
 export * from './cache';
 
 export {
-	PokemonTypeColor
+	PokemonTypeColor,
+	PokemonService
 } from './services';
 
 export {
