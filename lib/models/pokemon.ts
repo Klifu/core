@@ -27,6 +27,11 @@ export type PokemonType = 'Normal'
 	| 'Steel'
 	| 'Fairy';
 
+export type TypeColorCode = {
+	[pokemonType in PokemonType]: string;
+};
+
+
 export interface BaseStat {
 	attack: number,
 	defense: number,
@@ -107,7 +112,7 @@ export class Pokemon extends Base {
 		const defense = Math.round((baseStat.defense + iv.defense) * this.cpmService.getCpm(level));
 		const hp = Math.round((baseStat.hp + iv.hp) * this.cpmService.getCpm(level));
 		let cp = Math.round((attack * defense ^ 0.5 * hp ^ 0.5 * this.cpmService.getCpm(level) ^ 2) / 10);
-		if(cp<10){
+		if (cp < 10) {
 			cp = 10;
 		}
 		return { attack, defense, hp, cp };

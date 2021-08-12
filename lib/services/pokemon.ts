@@ -1,5 +1,5 @@
 import { fetchPokemons } from '../util/fetcher';
-import { PokemonBase, PokemonType, Rarity, Pokemon } from '../models';
+import { PokemonBase, PokemonType, Rarity, Pokemon, TypeColorCode } from '../models';
 import _ from 'lodash';
 import { RandomeGenerator } from './rng';
 
@@ -44,5 +44,31 @@ export class PokemonService {
 		return {
 			rarity: (rare: Rarity) => _.filter(this._pokemons, pk => pk.rarity === rare)
 		}
+	}
+}
+
+export class PokemonTypeColor {
+	private static colorCodeTable: TypeColorCode = {
+		Bug: 'A8B820',
+		Dark: '705848',
+		Dragon: '7038F8',
+		Electric: 'F8D030',
+		Fairy: 'F0B6BC',
+		Fighting: 'C03028',
+		Fire: 'F08030',
+		Flying: 'A890F0',
+		Ghost: '705898',
+		Grass: '78C850',
+		Ground: 'E0C068',
+		Ice: '98D8D8',
+		Normal: 'A8A878',
+		Poison: 'A040A0',
+		Psychic: 'F85888',
+		Rock: 'B8A038',
+		Steel: 'B8B8D0',
+		Water: '6890F0'
+	}
+	static get(pokemonType: PokemonType): string {
+		return this.colorCodeTable[pokemonType];
 	}
 }

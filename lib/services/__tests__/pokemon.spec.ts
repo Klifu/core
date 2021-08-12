@@ -1,5 +1,5 @@
 import { Pokemon } from '../../models';
-import { PokemonService } from '../pokemon';
+import { PokemonService, PokemonTypeColor } from '../pokemon';
 
 let pokemonService: PokemonService;
 
@@ -42,4 +42,11 @@ describe('Pokemon Service', () => {
 		expect(pokemon instanceof Pokemon).toBeTruthy();
 	})
 
+})
+
+describe('PokemonTypeColor Should', () => {
+
+	test('return color of bug type', () => {
+		expect(PokemonTypeColor.get('Bug')).toMatch('A8B820');
+	})
 })
